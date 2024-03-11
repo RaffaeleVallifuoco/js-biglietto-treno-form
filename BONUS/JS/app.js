@@ -54,7 +54,7 @@ const ticketKm = document.getElementById('kmSummary');
 ticketKm.innerHTML = 'Totale Kilometri : ' +distance;
 
 const ticketDiscount = document.getElementById('discountSummary');
-ticketDiscount.innerHTML = 'Sconto applicato : '  +distanceElement.value;
+ticketDiscount.innerHTML = 'Sconto applicato : '  +distance;
 
 
 
