@@ -31,8 +31,13 @@
                                 <input id="distance"  type="number" class="form-control" placeholder="Inserisci i kilometri" >
                             </div>
                             <div class="mb-5">
-                                <label for="exampleInput" class="form-label">Quani anni hai ?</label>
-                                <input id="age" type="number"  class="form-control" placeholder="Età">
+                                <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                                    <option selected>Scegli lo sconto da applicare</option>
+                                    <option value="none">Nessuno</option>
+                                    <option value="under">Minorenni</option>
+                                    <option value="over">Over 65</option>
+                                </select>
+                                
                             </div>
                             
                             <button id="submit"  class="btn btn-primary rounded-pill">Calcola</button>
