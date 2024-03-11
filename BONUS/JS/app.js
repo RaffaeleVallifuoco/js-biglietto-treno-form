@@ -16,7 +16,7 @@ submitElement.addEventListener('click', function() {
     console.log ('click sul submit')
     const distance = parseInt(distanceElement.value);
     console.log(distance);
-    const age = ageElement.option;
+    const age = ageElement.value;
     console.log(age);
     let price_base = 0.21 * distance; //number
     price_base = price_base.toFixed(2);
@@ -29,33 +29,39 @@ submitElement.addEventListener('click', function() {
     price_discount = price_base;
     const ticketPrice = document.getElementById('price');
     ticketPrice.innerHTML = 'Prezzo del biglietto : ' + price_discount + ' €';
-    if (ageElement.option ==under) {
+    if (age == 'under') {
         discount = price_base * 0.2;
-        let price_discount = price_base - discount;
+        let price_discount= price_base - discount;
+        price_discount.toFixed(2);
         console.log('Sconto 20% applicato');
         console.log('Prezzo scontato : ' + price_discount + ' €');
+        const discountShow = document.getElementById('sale');
+        discountShow.innerHTML = 'Applicato sconto 20%';
         const ticketPrice = document.getElementById('price');
         ticketPrice.innerHTML = 'Prezzo del biglietto : ' + price_discount + ' €';
-    } else if (age >= 65) {
+    } else if (age =='over') {
         discount = price_base * 0.4;
         let price_discount = price_base - discount;
+        price_discount.toFixed(2);
         console.log('Sconto 40% applicato');
         console.log('Prezzo scontato : ' + price_discount + ' €');
+        const discountShow = document.getElementById('sale');
+        discountShow.innerHTML = 'Applicato sconto 40%';
         const ticketPrice = document.getElementById('price');
-        ticketPrice.innerHTML = 'Prezzo del biglietto : ' + price_discount + ' €';
-    
-
-    
+        ticketPrice.innerHTML = 'Prezzo del biglietto : ' + price_discount + ' €';    
     }
     
+    const ticketKm = document.getElementById('kmSummary');
+    ticketKm.innerHTML = 'Totale Kilometri : ' + distance;
+
+    console.log(distance);
+
+
+
+
 })
 
 
-const ticketKm = document.getElementById('kmSummary');
-ticketKm.innerHTML = 'Totale Kilometri : ' +distance;
-
-const ticketDiscount = document.getElementById('discountSummary');
-ticketDiscount.innerHTML = 'Sconto applicato : '  +distance;
 
 
 
