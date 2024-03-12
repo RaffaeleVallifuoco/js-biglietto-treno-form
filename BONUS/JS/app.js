@@ -1,16 +1,17 @@
+// console test 
 console.log ('console test');
 
-// Inserimento età e km da percorrere
 
 // leggo elementi dom e ascolto click
 const submitElement = document.getElementById('submit'); //object
 
 const distanceElement = document.getElementById('distance'); //string | null
-console.log('distanza :  ' +distanceElement);
+console.log('distanza :  ' + distanceElement);
 
 const ageElement = document.getElementById('age'); //string | null
-console.log('età ; ' +ageElement);
+console.log('età ; ' + ageElement);
 
+//ascolto clic e azioni post
 
 submitElement.addEventListener('click', function() {
     console.log ('click sul submit')
@@ -26,9 +27,10 @@ submitElement.addEventListener('click', function() {
     // calcolo buono sconto
 
     let discount = 0; //number 
-    price_discount = price_base;
-    const ticketPrice = document.getElementById('price');
-    ticketPrice.innerHTML = 'Prezzo del biglietto : ' + price_discount + ' €';
+    price_discount = price_base; //number
+    const ticketPrice = document.getElementById('price'); //object
+    ticketPrice.innerHTML = 'Prezzo del biglietto : ' + price_discount + ' €'; //string
+
     if (age == 'under') {
         discount = price_base * 0.2;
         let price_discount= price_base - discount;
@@ -51,13 +53,10 @@ submitElement.addEventListener('click', function() {
         ticketPrice.innerHTML = 'Prezzo del biglietto : ' + price_discount + ' €';    
     }
     
+    // viAUlizza in htnl il orezzo finale
+
     const ticketKm = document.getElementById('kmSummary');
     ticketKm.innerHTML = 'Totale Kilometri : ' + distance;
-
-    console.log(distance);
-
-
-
 
 })
 
